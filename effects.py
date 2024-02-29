@@ -13,7 +13,7 @@ size = (1000, 1000)
 video = VideoWriter('game.avi', VideoWriter_fourcc('X', 'V', 'I', 'D'), 60, size)  # Increased frame rate to 30
 
 # load PGN file
-pgn = open('/Users/sairoopesh/projects/pgn_to_avi/pgn/Adams.pgn')
+pgn = open(r'C:\Users\soura\Desktop\chess-pgn-to-video\pgn\Adams.pgn')
 
 # get the first game
 game = chess.pgn.read_game(pgn)
@@ -33,7 +33,7 @@ for move in game.mainline_moves():
 pygame.init()
 
 # Load additional resources
-font = pygame.font.Font(None, 36)  # Set font for text overlay
+
 
 # loop over board positions
 # loop over board positions
@@ -44,9 +44,6 @@ for fen in fens:
         display.start(fen)
 
         # Add dynamic text overlay
-        text = font.render("Exciting Chess Game", True, (255, 255, 255))
-        text_rect = text.get_rect(center=(size[0] // 2, size[1] // 10))  # Adjusted vertical position
-        pygame.display.get_surface().blit(text, text_rect)
 
         # Add some visual effects or animations here
         # Example: Add a rotating effect to the board
